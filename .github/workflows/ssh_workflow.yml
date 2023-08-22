@@ -18,8 +18,8 @@ jobs:
         mkdir -p ~/.ssh
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan ubuntu@172-31-34-145 >> ~/.ssh/known_hosts
+        ssh-keyscan ubuntu@ip-172-31-34-145 >> ~/.ssh/known_hosts
 
     - name: Run remote command
       run: |
-        ssh ubuntu@172-31-34-145 "echo 'Hello from remote server'"
+        ssh ubuntu@ip-172-31-34-145 "echo 'Hello from remote server'"
