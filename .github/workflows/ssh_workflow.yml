@@ -1,0 +1,25 @@
+name: SSH Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ssh:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan your.server.com >> ~/.ssh/known_hosts
+
+    - name: Run remote command
+      run: |
+        ssh user@172-31-34-145 "echo 'Hello from remote server'"
