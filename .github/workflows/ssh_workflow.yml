@@ -18,7 +18,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan your.server.com >> ~/.ssh/known_hosts
+        ssh-keyscan 172-31-34-145 >> ~/.ssh/known_hosts
 
     - name: Run remote command
       run: |
