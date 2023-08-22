@@ -23,4 +23,4 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        ssh -v ubuntu@52.15.41.102 "echo 'Hello from GitHub Actions' > ~/test.txt"
+        ssh -v root@52.15.41.102 "echo 'Hello from GitHub Actions' > ~/test.txt"
